@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <title>Customer Information Form</title>
+  <style>
+    .form-group label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Information</h1>
+    <form id="customerForm" onsubmit="submitForm(event)">
+      <!-- Customer Details -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="address1">Address Line 1</label>
+        <input type="text" class="form-control" id="address1" placeholder="Enter address line 1" required>
+      </div>
+      <div class="form-group">
+        <label for="address2">Address Line 2</label>
+        <input type="text" class="form-control" id="address2" placeholder="Enter address line 2">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="Enter city" required>
+      </div>
+      <div class="form-group">
+        <label for="state">State/Province</label>
+        <input type="text" class="form-control" id="state" placeholder="Enter state/province" required>
+      </div>
+      <div class="form-group">
+        <label for="postalCode">Postal Code</label>
+        <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code" required>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" id="country" placeholder="Enter country" required>
+      </div>
+      
+      <!-- Additional Information -->
+      <h2>Additional Information</h2>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob">
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <input type="text" class="form-control" id="nationality" placeholder="Enter nationality">
+      </div>
+      <div class="form-group">
+        <label for="identificationNumber">Identification Number</label>
+        <input type="text" class="form-control" id="identificationNumber" placeholder="Enter identification number">
+      </div>
+      <div class="form-group">
+        <label for="preferredLanguage">Preferred Language</label>
+        <input type="text" class="form-control" id="preferredLanguage" placeholder="Enter preferred language">
+      </div>
+      <div class="form-group">
+        <label for="maritalStatus">Marital Status</label>
+        <select class="form-control" id="maritalStatus">
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+          <option value="widowed">Widowed</option>
+        </select>
+      </div>
+      
+      <!-- Occupation -->
+      <h2>Occupation</h2>
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" class="form-control" id="companyName" placeholder="Enter company name">
+      </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" class="form-control" id="jobTitle" placeholder="Enter job title">
+      </div>
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" class="form-control" id="department" placeholder="Enter department">
+      </div>
+      <div class="form-group">
+        <label for="workAddress1">Work Address Line 1</label>
+        <input type="text" class="form-control" id="workAddress1" placeholder="Enter work address line 1">
+      </div>
+      <div class="form-group">
+        <label for="workAddress2">Work Address Line 2</label>
+        <input type="text" class="form-control" id="workAddress2" placeholder="Enter work address line 2">
+      </div>
+      <div class="form-group">
+        <label for="workCity">Work City</label>
+        <input type="text" class="form-control" id="workCity" placeholder="Enter work city">
+      </div>
+      <div class="form-group">
+        <label for="workState">Work State/Province</label>
+        <input type="text" class="form-control" id="workState" placeholder="Enter work state/province">
+      </div>
+      <div class="form-group">
+        <label for="workPostalCode">Work Postal Code</label>
+        <input type="text" class="form-control" id="workPostalCode" placeholder="Enter work postal code">
+      </div>
+      <div class="form-group">
+        <label for="workCountry">Work Country</label>
+        <input type="text" class="form-control" id="workCountry" placeholder="Enter work country">
+      </div>
+      
+      <!-- Family Information -->
+      <h2>Family Information</h2>
+      <div class="form-group">
+        <label for="spouseName">Spouse/Partner's Name</label>
+        <input type="text" class="form-control" id="spouseName" placeholder="Enter spouse/partner's name">
+      </div>
+      <div class="form-group">
+        <label for="numChildren">Number of Children</label>
+        <input type="number" class="form-control" id="numChildren" placeholder="Enter number of children">
+      </div>
+      <div class="form-group">
+        <label for="childrenNames">Children's Names and Ages</label>
+        <input type="text" class="form-control" id="childrenNames" placeholder="Enter children's names and ages">
+      </div>
+      
+      <!-- Preferences -->
+      <h2>Preferences</h2>
+      <div class="form-group">
+        <label for="communicationPref">Communication Preference</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="email" id="emailPref">
+          <label class="form-check-label" for="emailPref">Email</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="phone" id="phonePref">
+          <label class="form-check-label" for="phonePref">Phone</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="text" id="textPref">
+          <label class="form-check-label" for="textPref">Text</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="paymentMethod">Preferred Payment Method</label>
+        <input type="text" class="form-control" id="paymentMethod" placeholder="Enter preferred payment method">
+      </div>
+      <div class="form-group">
+        <label for="subscriptionStatus">Subscription Status</label>
+        <select class="form-control" id="subscriptionStatus">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="deliveryMethod">Preferred Delivery Method</label>
+        <input type="text" class="form-control" id="deliveryMethod" placeholder="Enter preferred delivery method">
+      </div>
+      <div class="form-group">
+        <label for="marketingOptIn">Marketing Opt-in</label>
+        <select class="form-control" id="marketingOptIn">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      
+      <!-- Emergency Contact -->
+      <h2>Emergency Contact</h2>
+      <div class="form-group">
+        <label for="emergencyContactName">Emergency Contact Name</label>
+        <input type="text" class="form-control" id="emergencyContactName" placeholder="Enter emergency contact name">
+      </div>
+      <div class="form-group">
+        <label for="emergencyContactRelationship">Emergency Contact Relationship</label>
+        <input type="text" class="form-control" id="emergencyContactRelationship" placeholder="Enter emergency contact relationship">
+      </div>
+      <div class="form-group">
+        <label for="emergencyContactPhoneNumber">Emergency Contact Phone Number</label>
+        <input type="tel" class="form-control" id="emergencyContactPhoneNumber" placeholder="Enter emergency contact phone number">
+      </div>
+      
+      <!-- Insurance Information -->
+      <h2>Insurance Information</h2>
+      <div class="form-group">
+        <label for="insuranceProvider">Insurance Provider</label>
+        <input type="text" class="form-control" id="insuranceProvider" placeholder="Enter insurance provider">
+      </div>
+      <div class="form-group">
+        <label for="policyNumber">Policy Number</label>
+        <input type="text" class="form-control" id="policyNumber" placeholder="Enter policy number">
+      </div>
+      <div class="form-group">
+        <label for="insuranceType">Type of Insurance</label>
+        <input type="text" class="form-control" id="insuranceType" placeholder="Enter type of insurance">
+      </div>
+      
+      <!-- Daily Needs and Preferences -->
+      <h2>Daily Needs and Preferences</h2>
+      <div class="form-group">
+        <label for="dailyExpenses">Daily Expenses</label>
+        <input type="text" class="form-control" id="dailyExpenses" placeholder="Enter daily expenses">
+      </div>
+      <div class="form-group">
+        <label for="communicationMethod">Preferred Communication Method</label>
+        <select class="form-control" id="communicationMethod">
+          <option value="phone">Phone</option>
+          <option value="email">Email</option>
+          <option value="inPerson">In-person</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="contactTime">Preferred Contact Time</label>
+        <input type="text" class="form-control" id="contactTime" placeholder="Enter preferred contact time">
+      </div>
+      <div class="form-group">
+        <label for="otherPreferences">Other Preferences/Notes</label>
+        <textarea class="form-control" id="otherPreferences" rows="4" placeholder="Enter other preferences/notes"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      
+      // Form validation logic goes here
+      // You can access form values using JavaScript and perform validation checks
+      
+      // Example validation: Check if required fields are filled
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('email').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      
+      if (!fullName || !email || !phoneNumber) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // If form is valid, you can submit the data or perform any desired action
+      // For demonstration purposes, let's just log the form data
+      const form = document.getElementById('customerForm');
+      const formData = new FormData(form);
+      for (const pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+      }
+      
+      // Reset the form after submission
+      form.reset();
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
